@@ -34,7 +34,7 @@ public class UserController {
         String phone = user.getPhone();
         if(StringUtils.isNotEmpty(phone)){
             String code = ValidateCodeUtils.generateValidateCode(4).toString();
-//            SMSUtils.sendMessage("阿里云短信测试","",phone,code);
+//            SMSUtils.sendMessage("","",phone,code);
             httpSession.setAttribute(phone,code);
             log.info(code);
             return R.success("验证码发送成功");
